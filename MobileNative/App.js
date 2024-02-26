@@ -38,7 +38,7 @@ function HomeScreen({ navigation }) {
       ) : (
         <Text style={[styles.largeHeading, styles.italicFont]}>
           {" "}
-          I am NOT on IOS
+          I am NOT IOS
         </Text>
       )}
       <Button
@@ -62,6 +62,11 @@ function HomeScreen({ navigation }) {
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  //crudapi-5b6affb4b9d9.herokuapp.com/api/v1/movies
+  https: fetch(`https://crudapi-5b6affb4b9d9.herokuapp.com/api/v1/movies`)
+    .then((res) => res.json())
+    .then((data) => console.log({ data }));
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
