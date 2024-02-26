@@ -1,6 +1,8 @@
 import { StyleSheet, FlatList, View } from "react-native";
 import ListItem from "./ListItem";
 
+import styles from "../Appstyles";
+
 export default function ListContainer() {
   const DATA = [
     {
@@ -36,15 +38,7 @@ export default function ListContainer() {
       data={DATA}
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
+      style={styles.listContainer}
     />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

@@ -5,6 +5,8 @@ import { SafeAreaView, Switch, StyleSheet, Text, View } from "react-native";
 import Heading from "./components/Heading";
 import ListContainer from "./components/ListContainer";
 
+import styles from "./Appstyles";
+
 export default function App() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
@@ -16,7 +18,9 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Mobile Projects</Text>
+      <Text style={[styles.largeHeading, styles.italicFont]}>
+        Mobile Projects
+      </Text>
       <Heading>This is a Heading</Heading>
       <ListContainer />
       <Switch
@@ -31,12 +35,3 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
