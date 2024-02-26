@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -17,6 +17,19 @@ const styles = StyleSheet.create({
   listContainer: {
     flexGrow: 0,
     flexShrink: 0,
+  },
+  headingColor: {
+    ...Platform.select({
+      android: {
+        color: "blue",
+      },
+      ios: {
+        color: "yellow",
+      },
+      default: {
+        color: "red",
+      },
+    }),
   },
 });
 export default styles;
